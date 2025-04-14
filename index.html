@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        #counter {
+            font-size: 4rem;
+            margin: 20px 0;
+            color: #333;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .increment {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .increment:hover {
+            background-color: #45a049;
+        }
+
+        .decrement {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .decrement:hover {
+            background-color: #da190b;
+        }
+
+        .reset {
+            background-color: #008CBA;
+            color: white;
+        }
+
+        .reset:hover {
+            background-color: #007bb5;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Simple Counter</h1>
+    <div id="counter">0</div>
+    <div class="buttons">
+        <button class="decrement">-</button>
+        <button class="reset">Reset</button>
+        <button class="increment">+</button>
+    </div>
+
+    <script>
+        let count = 0;
+        const counterDisplay = document.getElementById('counter');
+        const incrementBtn = document.querySelector('.increment');
+        const decrementBtn = document.querySelector('.decrement');
+        const resetBtn = document.querySelector('.reset');
+
+        incrementBtn.addEventListener('click', () => {
+            count++;
+            updateDisplay();
+        });
+
+        decrementBtn.addEventListener('click', () => {
+            count--;
+            updateDisplay();
+        });
+
+        resetBtn.addEventListener('click', () => {
+            count = 0;
+            updateDisplay();
+        });
+
+        function updateDisplay() {
+            counterDisplay.textContent = count;
+        }
+    </script>
+</body>
+
+</html>
